@@ -15,6 +15,7 @@ Module.register("MMM-Trello", {
         updateInterval: 10 * 1000, // every 10 seconds
         animationSpeed: 2.5 * 1000, // 2.5 seconds
         showTitle: true,
+        titleClass: "medium",
         api_key: "",
         token: "",
         list: "",
@@ -130,7 +131,7 @@ Module.register("MMM-Trello", {
                 for (card = startat; card <= endat; card++) {
                     if (this.config.showTitle || this.config.showDueDate) {
                         var name = document.createElement("div");
-                        name.className = "medium light " + (this.config.isCompleted ? "is-completed" : "bright");
+                        name.className = this.config.titleClass + " light " + (this.config.isCompleted ? "is-completed" : "bright");
 
                         content = "";
                         if (this.config.showTitle) {
